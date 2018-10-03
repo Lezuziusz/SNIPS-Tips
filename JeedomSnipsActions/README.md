@@ -59,15 +59,15 @@ if ($action != 'default') call_user_func($action);
 //===========actions:
 function setVolume()
 {
-   	global $snipsip, $sshlogin, $sshpass;
+  	global $snipsip, $sshlogin, $sshpass;
   	if(isset($_GET['vol']))
-    {
-      $vol = $_GET['vol'];
-      $cmd = "amixer -c 1 set Playback ".$vol."%";
-      $connection = ssh2_connect($snipsip, 22);
-      ssh2_auth_password($connection, $sshlogin, $sshpass);
-      $stream = ssh2_exec($connection, $cmd);
-    }
+  	{
+		$vol = $_GET['vol'];
+		$cmd = "amixer -c 1 set Playback ".$vol."%";
+		$connection = ssh2_connect($snipsip, 22);
+		ssh2_auth_password($connection, $sshlogin, $sshpass);
+		$stream = ssh2_exec($connection, $cmd);
+  	}
 }
 
 function status()
