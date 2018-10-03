@@ -44,6 +44,8 @@ You are done !
 
 ### Script to be run
 Here is the script that will be triggered by our new Speak command.
+You can notice that it is designed to handle other actions you can add into.
+
 ```php
 <?php
 include('/var/www/html/core/class/scenario.class.php');
@@ -69,7 +71,7 @@ if ($action != 'default') call_user_func($action);
 function speak()
 {
 	$title = $_GET['title'];
-    $message = $_GET['message'];
+    	$message = $_GET['message'];
   	$message = evalDynamicString($message);
 	speakNow($message);
 }
