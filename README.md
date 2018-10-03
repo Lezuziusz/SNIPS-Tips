@@ -14,6 +14,7 @@ Trigger sam update-assistant, sam status, change tts volume, directly from Jeedo
 
 ## SNIPS
 - A few tips for Custom personal wake-word with Respeaker 2 mic Pi HAT (soon)
+- More natural voice: Respeaker 2 mic Pi HAT equalizer (have to make it working!!)
 
 ## Ressources
 
