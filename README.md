@@ -1,4 +1,6 @@
 
+
+<img align="right" src="https://avatars0.githubusercontent.com/u/2564618?s=200&amp;v=4" width=96></br>
 # SNIPS-Tips
 
 #### This repository is for documenting some tips and tricks on SNIPS
@@ -13,3 +15,8 @@ Trigger sam update-assistant, sam status, change tts volume, directly from Jeedo
 ## SNIPS
 - A few tips for Custom personal wake-word with Respeaker 2 mic Pi HAT (soon)
 
+## Ressources
+
+- [SNIPS official website](https://snips.ai/)
+- [SNIPS official Github](https://github.com/snipsco)
+- [SNIPS Jeedom Doc](https://snips.gitbook.io/documentation/home-automation-platforms/jeedom-fr)
