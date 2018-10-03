@@ -31,7 +31,7 @@ So, we will create a plugin script command and use it instead of the normal snip
 - Create a new script equipment and name it SNIPS_Actions
 - On command tab, create a new command and set it as below:
 
-<img align="center" src="/assets/script_remap.jpg">
+<img align="center" src="assets/script_remap.jpg">
 
 The request should be like this:
 /var/www/html/core/php/../../plugins/script/core/ressources/trigger.php  action=speak title="#title#" message="#message#"
@@ -124,11 +124,13 @@ function evalDynamicString($_string)
 ?>
 ```
 
-Here is an example of a scenario handling cover answer with default snips tts command, and using the one we just created.
+Here is an example of a scenario handling cover answer with default snips tts command:
 
-<img align="center" src="/assets/scenario_before.jpg">
+<img align="center" src="assets/scenario_before.jpg">
 
-<img align="center" src="/assets/scenario_after.jpg">
+And now, using the one we just created:
+
+<img align="center" src="assets/scenario_after.jpg">
 
 
 You are basically now doing a filter between the scenario and the snips real tts command.
