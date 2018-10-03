@@ -5,7 +5,7 @@
 
 
 ## SNIPS with Jeedom
-- Dynamic remapping of TTS (soon)</br>
+- Dynamic remapping of TTS : [JeedomTTSremap](JeedomTTSremap "JeedomTTSremap")</br>
 Exp: Le volet du salon est {#[Salon][Volet][Etat]#|0:fermé|<99:ouvert à #[Salon][Volet][Etat]#|99:ouvert}
 - SNIPS actions inside Jeedom (soon)</br>
 Trigger sam update-assistant, sam status, change tts volume, directly from Jeedom.
