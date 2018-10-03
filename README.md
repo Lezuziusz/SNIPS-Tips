@@ -5,8 +5,10 @@
 
 
 ## SNIPS with Jeedom
-- Dynamic remapping of TTS (soon)
-ex: Le volet du salon est {#[Salon][Volet][Etat]#|0:fermé|<99:ouvert à #[Salon][Volet][Etat]#|99:ouvert}
+- Dynamic remapping of TTS (soon)</br>
+Exp: Le volet du salon est {#[Salon][Volet][Etat]#|0:fermé|<99:ouvert à #[Salon][Volet][Etat]#|99:ouvert}
+- SNIPS actions inside Jeedom (soon)</br>
+Trigger sam update-assistant, sam status, change tts volume, directly from Jeedom.
 
 ## SNIPS
 - Custom personal wake-word with Respeaker 2 mic Pi HAT (soon)
