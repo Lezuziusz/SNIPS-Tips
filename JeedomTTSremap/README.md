@@ -79,8 +79,11 @@ function speak()
 //=====functions:
 function speakNow($message)
 {
-  	$cmd = cmd::byString('#[Snips-Intents][Snips-TTS-default][say]#');
-    $cmd->execCmd($options=array('title'=>'', 'message'=>$message), $cache=0);
+	$title = $_GET['title'];
+	$cmdTTSName = '#[Snips-Intents][Snips-TTS-default][say]#';
+  	if ($title != '') $cmdTTSName = '#[Snips-Intents][Snips-TTS-'.$title.'][say]#';
+  	$cmd = cmd::byString($cmdTTSName);
+    	$cmd->execCmd($options=array('title'=>'', 'message'=>$message), $cache=0);
 }
 
 function evalDynamicString($_string)
@@ -134,13 +137,21 @@ And now, using the one we just created:
 
 <img align="center" src="assets/scenario_after.jpg">
 
+> If you have some satellite(s), you will want the TTS answer to be said on the server or satellite would triggered the action.
+By default, the script will send the TTS command to 'default', but you can put in Title field tag(siteId), and the script will send the TTS answer to the right server/satellite. Or specify it, like 'livingroom', 'kitchen', etc.
+This is handle by the function speakNow() of the script.
+
+<img align="center" src="assets/remap_title.jpg">
 
 You are basically now doing a filter between the scenario and the snips real tts command.
 So, you can put a lot different things and filters into this script to do other things. For example transforming '.' to 'coma', not triggering instantly the tts command but on next movement in the room, and so on...
 
 -----------------
 #### 2018-10-04
-First public version
+- Handling server/satellite(s) configuration.
+
+#### 2018-10-03
+- First public version.
 
 
 ## License
