@@ -79,7 +79,7 @@ function speak()
 //=====functions:
 function speakNow($message, $room='')
 {
-	if ($room != '') $room = 'default';
+	if ($room == '') $room = 'default';
     	$cmdTTSName = '#[Snips-Intents][Snips-TTS-'.$room.'][say]#';
   	$cmd = cmd::byString($cmdTTSName);
     	$cmd->execCmd($options=array('title'=>'', 'message'=>$message), $cache=0);
@@ -139,7 +139,7 @@ And now, using the one we just created:
 > If you have some satellite(s), you will want the TTS answer to be said on the server or satellite that triggered the action.
 By default, the script will send the TTS command to 'default' room, but you can put in Title field tag(siteId), and the script will send the TTS answer to the right server/satellite. Or specify it, like 'livingroom', 'kitchen', etc.
 This is handle by the function speakNow() of the script. To change default room if you don't specify Title field, change this line:</br>
-if ($room != '') $room = 'default';
+if ($room == '') $room = 'default';
 
 <img align="center" src="assets/remap_title.jpg">
 
