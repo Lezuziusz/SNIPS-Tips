@@ -124,9 +124,42 @@ Now, you can use them in a scenario:
 You can also put these actions on your dashboard in a Virtual. Or simple going back into your script equipments, commands tab and hit 'test' button.
 For updateAssistant and status, the result answer from the Pi will appear in a new log named snips-piserver (Analyse / Logs)
 
+### Master/Satellite volume
+
+If you have a Master and some satellite(s), you won't have to create other setVolume commands.
+
+Just change the setVolume script command to Message type, with path/to/script.php action=setVolume device=#title# vol=#message#</br>
+Then inside the code, change the function like this:
+
+```php
+function setVolume()
+{
+   	global $snipsip, $sshlogin, $sshpass;
+  	$device = $_GET['device'];
+  	$vol = $_GET['vol'];
+  	if (strtolower($device) == 'salon') $snipsip = '192.168.0.x';
+  	if (strtolower($device) == 'chambre') $snipsip = '192.168.0.y';
+  
+  	$vol = $_GET['vol'];
+  	$cmd = "amixer -c 1 set Playback ".$vol."%";
+  	$connection = ssh2_connect($snipsip, 22);
+  	ssh2_auth_password($connection, $sshlogin, $sshpass);
+  	$stream = ssh2_exec($connection, $cmd);
+}
+```
+Take care to change or add others satellite(s) in the function with their name / IP.
+Then in your scenario, call it like this:
+
+<img align="center" src="assets/volSats.jpg">
+
+
 -----------------
-#### 2018-10-04
-First public version
+
+#### 2018-10-05
+- setVolume for Master/Satellite(s)
+
+#### 2018-10-03
+- First public version
 
 
 ## License
