@@ -19,7 +19,7 @@ Connect to your pi with ssh, and install the plugin:
 
 > sudo apt-get install -y libasound2-plugin-equal
 
-This will put the file of the plugin in /home/pi/.alsaequal.bin (if you are using pi user). This file is the one used by the snips audio server, so we will move it, and set _snips user permissions to use it. Otherwise, snips service won't be able to load it, and will crash.
+This will put the file of the plugin in /home/pi/.alsaequal.bin (if you are using pi user). This file is the one used by the snips audio server, so we will move it, and set _snips user permissions to use it. Otherwise, snips service won't be able to load it, and will crash. (Thanks [Psycho](https://github.com/Psychokiller1888) for this!)
 
 > sudo mkdir /var/empty
 sudo cp /home/pi/.alsaequal.bin /var/empty/.alsaequal.bin
