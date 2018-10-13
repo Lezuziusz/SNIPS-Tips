@@ -66,8 +66,9 @@ pcm.equal {
 This will put the file of the plugin in /home/pi/.alsaequal.bin (if you are using pi user). This file is the one used by the snips audio server, so we will move it, and set _snips user permissions to use it. Otherwise, snips service won't be able to load it, and will crash. (Thanks [Psycho](https://github.com/Psychokiller1888) for this!)
 
 > sudo mkdir /var/empty</br>
-> sudo cp /home/pi/.alsaequal.bin /var/empty/.alsaequal.bin</br>
-> sudo chown _snips: /var/empty/.alsaequal.bin
+sudo cp /home/pi/.alsaequal.bin /var/empty/.alsaequal.bin</br>
+sudo chown _snips: /var/empty/.alsaequal.bin</br>
+sudo chmod 777 /var/empty/.alsaequal.bin
 
 You can now restart snips audio server:
 
