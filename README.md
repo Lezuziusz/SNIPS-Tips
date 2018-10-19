@@ -15,6 +15,7 @@ Trigger sam update-assistant, sam status, change tts volume, directly from Jeedo
 ## SNIPS
 - A few tips for Custom personal wake-word with Respeaker 2 mic Pi HAT (soon)
 - More natural voice: equalize TTS! [snips_equal](https://github.com/KiboOst/SNIPS-Tips/tree/master/snips_equal)
+- [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl) Control LEDs, with easy cutom animations or google/alexa animations. 
 
 
 ## Ressources
