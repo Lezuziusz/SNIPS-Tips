@@ -50,10 +50,6 @@ You can notice that it is designed to handle other actions you can add into.
 <?php
 include('/var/www/html/core/class/scenario.class.php');
 
-$snipsip = '192.168.x.y';
-$sshlogin = 'my.ssh.login.to.the.pi';
-$sshpass = 'mypass';
-
 if (isset($argv)) {
 	foreach ($argv as $arg) {
 		$argList = explode('=', $arg);
