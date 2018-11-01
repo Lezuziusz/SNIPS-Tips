@@ -40,6 +40,7 @@ class snipsBatcher():
 	#
 
 	def showResult(self, nluInference, matchIntent='', showOnlyUnmatched=False):
+		self.tested += 1
 		displayResult = ''
 		showThis = True
 
@@ -48,6 +49,7 @@ class snipsBatcher():
 		#no intent found:
 		if not 'intentName' in nluInference['intent']:
 			displayResult = '[!!No intent found!!] %s'%intentInput
+			self.unmatched += 1
 			if matchIntent != '':
 				displayResult += ' should match: %s'%matchIntent
 			print(displayResult)
@@ -61,8 +63,10 @@ class snipsBatcher():
 			if matchIntent == intentName:
 				if showOnlyUnmatched:
 					showThis = False
+				self.matched += 1
 				displayResult += '[Intent MATCHED]'
 			else:
+				self.unmatched += 1
 				displayResult += '[!!Intent UNMATCHED!!]'
 
 
@@ -133,9 +137,7 @@ class snipsBatcher():
 	#
 
 	def __init__(self, login='', password='', project=''):
-		self._version = 0.1
-		self.error = None
-
+		self._version = 0.12
 		self._login = login
 		self._password = password
 		self._proj = project
@@ -144,6 +146,10 @@ class snipsBatcher():
 		self._reqHdl = None
 		self.cookieJar = LWPCookieJar()
 		self._cookFile = ''
+
+		self.matched = 0
+		self.unmatched = 0
+		self.tested = 0
 
 		if os.access('/', os.W_OK):
 			APIfolder = os.path.dirname(os.path.realpath(__file__))
@@ -185,3 +191,5 @@ if __name__ == "__main__":
 		if _debug: debug(3, 'batch test: %s | %s'%(item, batchJson[item]))
 		result = snips.testQuery(item)
 		snips.showResult(result, batchJson[item])
+		
+	print('mached: %s | unmatched: %s | total: %s'%(snips.matched, snips.unmatched, snips.tested))
