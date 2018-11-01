@@ -192,4 +192,4 @@ if __name__ == "__main__":
 		result = snips.testQuery(item)
 		snips.showResult(result, batchJson[item])
 		
-	print('mached: %s | unmatched: %s | total: %s'%(snips.matched, snips.unmatched, snips.tested))
+	print('matched: %s | unmatched: %s | total: %s'%(snips.matched, snips.unmatched, snips.tested))
