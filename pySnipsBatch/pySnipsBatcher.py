@@ -39,8 +39,9 @@ class snipsBatcher():
 		return answer[0]['data']['nluInference']
 	#
 
-	def showResult(self, nluInference, matchIntent=''):
+	def showResult(self, nluInference, matchIntent='', showOnlyUnmatched=False):
 		displayResult = ''
+		showThis = True
 
 		intentInput = nluInference['input']
 
@@ -58,25 +59,31 @@ class snipsBatcher():
 
 		if matchIntent != '':
 			if matchIntent == intentName:
+				if showOnlyUnmatched:
+					showThis = False
 				displayResult += '[Intent MATCHED]'
 			else:
 				displayResult += '[!!Intent UNMATCHED!!]'
 
+
+
 		displayResult += ' "%s" | intentName: %s | %s'%(intentInput, intentName, intentProba)
-		print(displayResult)
-		for slot in slots:
-			slotName = slot['slotName']
-			entity = slot['entity']
-			rawValue = slot['rawValue']
-			try:
-				value = json.loads(slot['value'])['value']
-			except:
-				value = slot['value']
-			displaySlotResult = 'slotName: %s | entity: %s | rawValue: %s | value: %s'%(slotName, entity, rawValue, value)
-			print(displaySlotResult)
-		if len(slots) == 0:
-			print('No slot found')
-		print()
+
+		if showThis:
+			print(displayResult)
+			for slot in slots:
+				slotName = slot['slotName']
+				entity = slot['entity']
+				rawValue = slot['rawValue']
+				try:
+					value = json.loads(slot['value'])['value']
+				except:
+					value = slot['value']
+				displaySlotResult = 'slotName: %s | entity: %s | rawValue: %s | value: %s'%(slotName, entity, rawValue, value)
+				print(displaySlotResult)
+			if len(slots) == 0:
+				print('No slot found')
+			print()
 	#
 
 	def request(self, method, host, path='', jsonString=None, postinfo=None): #standard function handling all get/post request
