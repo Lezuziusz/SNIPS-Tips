@@ -76,6 +76,8 @@ if __name__ == "__main__":
 		snips.showResult(result, batchJson[item])
 ```
 
+You can also specify snips.showResult(result, batchJson[item], True) to show only unmatched results if any.
+
 Then, just run pySnipsBatcher.py file and read output `:stuck_out_tongue_winking_eye:`
 
 -----------------
