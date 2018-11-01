@@ -23,3 +23,5 @@ Trigger sam update-assistant, sam status, change tts volume, directly from Jeedo
 - [SNIPS official website](https://snips.ai/)
 - [SNIPS official Github](https://github.com/snipsco)
 - [SNIPS Jeedom Doc](https://snips.gitbook.io/documentation/home-automation-platforms/jeedom-fr)
+
+- [Awesome SNIPS](https://github.com/snipsco/awesome-snips)
