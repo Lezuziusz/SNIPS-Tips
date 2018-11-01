@@ -13,7 +13,7 @@ Exp: Le volet du salon est {#[Salon][Volet][Etat]#|0:fermé|<99:ouvert à #[Salo
 Trigger sam update-assistant, sam status, change tts volume, directly from Jeedom.
 
 ## SNIPS
-- A few tips for Custom personal wake-word with Respeaker 2 mic Pi HAT (soon)
+- [SNIPS Batch Tester](https://github.com/KiboOst/SNIPS-Tips/tree/master/pySnipsBatch) : Console batch sentences testing.
 - More natural voice: equalize TTS! [snips_equal](https://github.com/KiboOst/SNIPS-Tips/tree/master/snips_equal)
 - [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl) Control LEDs, with easy cutom animations or google/alexa animations. 
 
