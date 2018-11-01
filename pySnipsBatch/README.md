@@ -34,7 +34,7 @@ Here is the batch.json file corresponding to test these two sentences:
 - Edit pySnipsBatcher.py to put your SNIPS console credentials into ```if __name__ == "__main__":```
 
 ```
-> You can find your project ID (proj_xxxx) in your url when connected on your console assistant. Ex: https://console.snips.ai/assistants/proj_xxxx
+You can find your project ID (proj_xxxx) in your url when connected on your console assistant. Ex: https://console.snips.ai/assistants/proj_xxxx
 ```
 
 You can either enter sentences directly in the script:
@@ -78,7 +78,16 @@ if __name__ == "__main__":
 
 You can also specify snips.showResult(result, batchJson[item], True) to show only unmatched results if any.
 
-Then, just run pySnipsBatcher.py file and read output :wink: :stuck_out_tongue_winking_eye:
+Then, just run pySnipsBatcher.py file and read output :wink:
+
+Here is a 46 test sentences result:
+```
+[13:36:39:Starting \_Dev\snips\BatchTesting\pySnipsBatcher.py...]
+matched: 46 | unmatched: 0 | total: 46
+[Finished in 62.0s]
+```
+
+1 min waiting against 46 copy/paste :stuck_out_tongue_winking_eye:
 
 -----------------
 #### 2018-11-01
