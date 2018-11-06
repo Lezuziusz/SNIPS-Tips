@@ -17,6 +17,7 @@ Trigger sam update-assistant, sam status, change tts volume, directly from Jeedo
 - [SNIPS Batch Tester](https://github.com/KiboOst/SNIPS-Tips/tree/master/pySnipsBatch) : Console batch sentences testing.
 - More natural voice: equalize TTS! [snips_equal](https://github.com/KiboOst/SNIPS-Tips/tree/master/snips_equal)
 - [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl) Control LEDs, with easy cutom animations or google/alexa animations. 
+- SLC: [Mute hotword](https://github.com/KiboOst/SNIPS-Tips/tree/master/SLCcustom) with button.
 
 
 ## Ressources
