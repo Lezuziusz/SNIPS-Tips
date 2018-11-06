@@ -153,6 +153,32 @@ Then in your scenario, call it like this:
 <img align="center" src="assets/volSats.jpg">
 
 
+### Snips Led Control: Turn LEDs off at night!
+
+Here is a goodie if you use [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl).
+Add these functions in your script, and ad two ledsOn and ledsOff commands. So, you can turn leds off at night :blush:
+
+
+```php
+function ledsoff()
+{
+   	global $snipsip, $sshlogin, $sshpass;
+  	$cmd = "mosquitto_pub -p 1883 -t 'hermes/leds/toggleOff' -m '{\"siteId\" : \"salle\"}'";
+  	$connection = ssh2_connect($snipsip, 22);
+  	ssh2_auth_password($connection, $sshlogin, $sshpass);
+  	$stream = ssh2_exec($connection, $cmd);
+}
+
+function ledson()
+{
+   	global $snipsip, $sshlogin, $sshpass;
+  	$cmd = "mosquitto_pub -p 1883 -t 'hermes/leds/toggleOn' -m '{\"siteId\" : \"salle\"}'";
+  	$connection = ssh2_connect($snipsip, 22);
+  	ssh2_auth_password($connection, $sshlogin, $sshpass);
+  	$stream = ssh2_exec($connection, $cmd);
+}
+```
+
 -----------------
 
 #### 2018-10-05
