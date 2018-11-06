@@ -158,6 +158,8 @@ Then in your scenario, call it like this:
 Here is a goodie if you use [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl).
 Add these functions in your script, and ad two ledsOn and ledsOff commands. So, you can turn leds off at night :blush:
 
+Change siteId if necessary (default is ... {\"siteId\" : \"default\"})
+
 
 ```php
 function ledsoff()
