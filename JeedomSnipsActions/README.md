@@ -153,6 +153,9 @@ Then in your scenario, call it like this:
 <img align="center" src="assets/volSats.jpg">
 
 
+-----------------
+
+
 ### Snips Led Control: Turn LEDs off at night!
 
 Here is a goodie if you use [SLC - Snips Led Control](https://github.com/Psychokiller1888/snipsLedControl).
@@ -180,6 +183,32 @@ function ledson()
   	$stream = ssh2_exec($connection, $cmd);
 }
 ```
+
+If you have several SNIPS devices (master and satelites) you can of course send several commands in the function.
+You can also automatically get all SNIPS device name and send the command for each one:
+
+```php
+function ledsoff()
+{
+   	global $snipsip, $sshlogin, $sshpass;
+  	$connection = ssh2_connect($snipsip, 22);
+  	ssh2_auth_password($connection, $sshlogin, $sshpass);
+	
+	$eqlogics = eqLogic::byType('snips');
+	foreach($eqlogics as $eq)
+	{
+	  if ($eq->getConfiguration('snipsType') == 'TTS')
+	  {
+	    $name = str_replace('Snips-TTS-', '', $eq->getName());
+	    $cmdOff = "mosquitto_pub -p 1883 -t 'hermes/leds/toggleOff' -m '{\"siteId\" : \"SNIPSNAME\"}'";
+	    $cmd = str_replace('SNIPSNAME', $name, $cmdOff);
+	    $stream = ssh2_exec($connection, $cmd);
+	  }
+	}
+}
+
+```
+
 
 -----------------
 
