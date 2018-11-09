@@ -67,6 +67,10 @@ Just save your CustomLedPattern and restart SLC.
 
 You can find the complete CustomLedPattern.py file here also.
 
+Need to turn LEDs on or off at night with Jeedom ? Check [here](https://github.com/KiboOst/SNIPS-Tips/tree/master/JeedomSnipsActions)
+
+--------------
+
 ## License
 
 The MIT License (MIT)
