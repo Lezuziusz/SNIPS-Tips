@@ -11,7 +11,7 @@ On the main SNIPS unit (the server), run this:
 
 ```
 cd ~
-git clone https://github.com/kiboost/snipsLogger.git
+git clone https://github.com/KiboOst/SNIPS-Tips/snipsLogger
 cd snipsLogger
 sudo chmod +x install.sh
 sudo ./install.sh
@@ -33,13 +33,15 @@ cat /home/pi/snipsLogger/snipsLog.txt
 
 Here is an example of log file:
 
-> 25-11-2018 12:00:17 | ON_SAY | SiteId: salle | text: ok.
+```
+25-11-2018 12:00:17 | ON_SAY | SiteId: salle | text: ok.
 25-11-2018 12:00:16 | ON_SUCCESS | SiteId: None | intent: {u'intentName': u'kiboost:lightsTurnOffJeedom', u'probability': 1.0}
 25-11-2018 12:00:14 | ON_THINK | SiteId: salle | text: éteins la lumière
 25-11-2018 12:00:12 | ON_LISTENING | SiteId: salle
 25-11-2018 12:00:11 | ON_HOTWORD | SiteId: salle | modelId: heySnips_Kiboost
 25-11-2018 11:59:20 -- snipsLogger starting
 
+```
 
 ### Uninstall
 If you want to completely remove this script and service, do the following:
