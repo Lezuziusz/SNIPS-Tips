@@ -5,7 +5,7 @@ Python script as a service to provides a log file of most important SNIPS mqtt t
 Basically, this script subscribe to hotword, intent, tss and such SNIPS topics, like a background sam watch, to provides a log files of what happens.
 This allow to check what's going on while using SNIPS.
 
-### Install
+## Install
 
 On the main SNIPS unit (the server), run this:
 
@@ -26,7 +26,7 @@ sudo nano /home/pi/snipsLogger/snipsLogger.py
 sudo systemctl start snipslogger
 ```
 
-### Read log
+## Read log
 snipsLogger will log to a simple text file so you can simply read it with:
 ```
 cat /home/pi/snipsLogger/snipsLog.txt
@@ -43,7 +43,7 @@ Here is an example of log file:
 25-11-2018 12:00:17 | ON_SAY | SiteId: salle | text: ok.
 ```
 
-### Uninstall
+## Uninstall
 If you want to completely remove this script and service, do the following:
 
 ```
