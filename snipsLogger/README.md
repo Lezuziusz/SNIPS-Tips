@@ -18,6 +18,7 @@ sudo ./install.sh
 ```
 This will install the script as a service, so it runs in background.
 By default, it will connect on localhost, port 1883. If you need to change this, you can stop the service, edit the python script, and start the service.
+Also, by default, the script will keep only 200 lines in log file.
 
 ```
 sudo systemctl stop snipslogger
@@ -34,13 +35,12 @@ cat /home/pi/snipsLogger/snipsLog.txt
 Here is an example of log file:
 
 ```
-25-11-2018 12:00:17 | ON_SAY | SiteId: salle | text: ok.
-25-11-2018 12:00:16 | ON_SUCCESS | SiteId: None | intent: {u'intentName': u'kiboost:lightsTurnOffJeedom', u'probability': 1.0}
-25-11-2018 12:00:14 | ON_THINK | SiteId: salle | text: éteins la lumière
-25-11-2018 12:00:12 | ON_LISTENING | SiteId: salle
-25-11-2018 12:00:11 | ON_HOTWORD | SiteId: salle | modelId: heySnips_Kiboost
 25-11-2018 11:59:20 -- snipsLogger starting
-
+25-11-2018 12:00:11 | ON_HOTWORD | SiteId: salle | modelId: heySnips_Kiboost
+25-11-2018 12:00:12 | ON_LISTENING | SiteId: salle
+25-11-2018 12:00:14 | ON_THINK | SiteId: salle | text: éteins la lumière
+25-11-2018 12:00:16 | ON_SUCCESS | SiteId: None | intent: {u'intentName': u'kiboost:lightsTurnOffJeedom', u'probability': 1.0}
+25-11-2018 12:00:17 | ON_SAY | SiteId: salle | text: ok.
 ```
 
 ### Uninstall
