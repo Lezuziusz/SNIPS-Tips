@@ -32,7 +32,7 @@ _mqttTOPICS_ = {
 _logKeepLines_ = 200
 _logPath_ = os.path.dirname(os.path.abspath(__file__)) + '/snipsLog.txt'
 
-_debug = 4
+_debug = False
 
 
 class SnipsLogger(object):
